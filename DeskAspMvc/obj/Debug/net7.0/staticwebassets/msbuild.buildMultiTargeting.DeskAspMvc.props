@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\DeskAspMvc.props" />
+</Project>
