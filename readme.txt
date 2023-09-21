@@ -5,9 +5,8 @@ Jestem w trakcie pracy nad tym projektem. Nie jest to finalna werja.
 Caution!
 This project is in development. This is not final version
 
-w przypadku braku utworzonej bazy danych aby załadować bazę danych należy wykonać następujące komendy w konsoli nuget managera
-dotnet ef migrations add InitialCreate
-dotnet ef database update
+Poprawiłem mechanizm przyznawania praw administratora w aplikacji. Teraz do tego slużą 3 linki, 1 do przyznania praw, 2 do usunięcia praw, 3 do weryfikacji czy się ma prawa administratora.
+W celu zobaczenia zmian, należy wylogować się i ponownie zalogować na koncie aplikacji.
 
-aby skorzystac z uprawnien administratora w bazie, nalezy zarejestrowac uzytkownika o podanym emailu: "testemail@gmail.com" a nastepnie wylaczyc serwer i wlaczyc ponownie. Aplikacja w kodzie inicjujacym aplikacje nada mu uprawnienia administratora
-
+I have corrected mechanism of admin rights granting. Now for this purpose are used 3 links. 1 for rights grant. 2 for reviking rights. 3 for checking if user have rights
+In order to see changes, user need to logout and then login again in application

@@ -23,6 +23,8 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
 //container.RegisterType<IUserMasterRepository, UserMasterRepository>();
 //DependencyResolver.SetResolver(new UnityDependencyResolver(container));
 builder.Services.AddScoped<LocationService, LocationService>();
+builder.Services.AddScoped<RoleManager<IdentityRole>, RoleManager<IdentityRole>>();
+builder.Services.AddScoped<UserManager<IdentityUser>, UserManager<IdentityUser>>();
 
 builder.Services.AddRazorPages();
 

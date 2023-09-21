@@ -35,6 +35,9 @@
 
         <ul >
             <li class="nav-item">@Html.ActionLink("list of locations", "Index", "Location2", new { area = "Admin" }, null)</li>
+            <li class="nav-item">@Html.ActionLink("gain admin privileges", "Gain", "AdminAccess", new { area = "Employee" }, null)</li>
+            <li class="nav-item">@Html.ActionLink("revoke admin privileges", "Revoke", "AdminAccess", new { area = "Employee" }, null)</li>
+            <li class="nav-item">@Html.ActionLink("test if you have admin privileges", "AdminTask", "AdminAccess", new { area = "Employee" }, null)</li>
            @* <li class="nav-item">@Html.ActionLink("list of desks ", "Index", "Desk", new { area = "Admin" }, null)</li>
             <li class="nav-item">@Html.ActionLink("to reservation ", "Index", "Reservation", new { area = "Employee" }, null)</li>
             <li class="nav-item">@Html.ActionLink("to your reservations ", "YourReservations", "Reservation", new { area = "Employee" }, null)</li>

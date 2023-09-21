@@ -60,6 +60,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/rekrutacjadopracy/29_8_23_20_03/DeskAspMvc/DeskAspMvc/Areas/Employee/Views/AdminAccess/AdminTask.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW1wbG95ZWVcVmlld3NcQWRtaW5BY2Nlc3NcQWRtaW5UYXNrLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/rekrutacjadopracy/29_8_23_20_03/DeskAspMvc/DeskAspMvc/Areas/Employee/Views/AdminAccess/Gain.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW1wbG95ZWVcVmlld3NcQWRtaW5BY2Nlc3NcR2Fpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/rekrutacjadopracy/29_8_23_20_03/DeskAspMvc/DeskAspMvc/Areas/Employee/Views/AdminAccess/Revoke.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW1wbG95ZWVcVmlld3NcQWRtaW5BY2Nlc3NcUmV2b2tlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/rekrutacjadopracy/29_8_23_20_03/DeskAspMvc/DeskAspMvc/Areas/Employee/Views/Reservation/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW1wbG95ZWVcVmlld3NcUmVzZXJ2YXRpb25cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
