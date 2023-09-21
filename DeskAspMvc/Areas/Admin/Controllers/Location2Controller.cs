@@ -1,5 +1,6 @@
 ﻿using DeskAspMvc.Data;
 using DeskAspMvc.services;
+using DeskAspMvc.services.Services2;
 using DeskModel.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -12,8 +13,8 @@ namespace DeskAspMvc.Areas.Admin.Controllers
     {
 
         private ApplicationDbContext _context { get; set; }
-        private LocationService _service { get; set; }
-        public Location2Controller(ApplicationDbContext context,LocationService service)
+        private LocationService2 _service { get; set; }
+        public Location2Controller(ApplicationDbContext context,LocationService2 service)
         {
             this._context = context;
             this._service = service;
@@ -29,14 +30,14 @@ namespace DeskAspMvc.Areas.Admin.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(Location location)
+        public IActionResult Create(Location entry)
         {
             if (ModelState.IsValid)
             {
-                var status = _service.Create(location);
+                var status = _service.Create(entry);
                 this.ViewBag.Status = status;
                 var lst = this._service.GetList();
-                ViewBag.createid = location.id;
+                ViewBag.createid = entry.id;
                 return View("Index",lst);
                 
                 //return RedirectToAction("Index");
@@ -44,7 +45,7 @@ namespace DeskAspMvc.Areas.Admin.Controllers
             }
 
 
-            return View(location);
+            return View(entry);
         } 
 
 
@@ -54,7 +55,7 @@ namespace DeskAspMvc.Areas.Admin.Controllers
             if(status.hasSucceeded==false)
             {
                 ViewBag.Status = status;
-                var lst = this._context.locations.ToList();
+                var lst = this._service.GetList();
                 return View("Index",lst);
             }
             else
@@ -63,16 +64,16 @@ namespace DeskAspMvc.Areas.Admin.Controllers
             }
         }
         [HttpPost]
-        public IActionResult Edit(Location location)
+        public IActionResult Edit(Location entry)
         {
             if (ModelState.IsValid)
             {
-                var status = _service.Edit(location,location.id);
+                var status = _service.Edit(entry,entry.id);
                 ViewBag.Status = status;
-                ViewBag.editid = location.id;
+                ViewBag.editid = entry.id;
                 return View("Index",this._service.GetList());
             }
-            return View(location);
+            return View(entry);
         }
 
         public IActionResult Delete(int? id)

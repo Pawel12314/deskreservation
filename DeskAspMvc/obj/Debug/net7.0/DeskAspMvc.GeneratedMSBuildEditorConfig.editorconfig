@@ -16,6 +16,18 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\rekrutacjadopracy\29_8_23_20_03\DeskAspMvc\DeskAspMvc
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/rekrutacjadopracy/29_8_23_20_03/DeskAspMvc/DeskAspMvc/Areas/Admin/Views/Desk2/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGVzazJcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/rekrutacjadopracy/29_8_23_20_03/DeskAspMvc/DeskAspMvc/Areas/Admin/Views/Desk2/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGVzazJcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/rekrutacjadopracy/29_8_23_20_03/DeskAspMvc/DeskAspMvc/Areas/Admin/Views/Desk2/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGVzazJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/rekrutacjadopracy/29_8_23_20_03/DeskAspMvc/DeskAspMvc/Areas/Admin/Views/Desk/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGVza1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

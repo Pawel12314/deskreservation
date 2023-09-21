@@ -2,7 +2,7 @@
 
 namespace DeskModel.Models
 {
-    public class Reservation
+    public class Reservation : IModel
     {
         public int id { get; set; }
         //public long dueInMilis { get; set; }

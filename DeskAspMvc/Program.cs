@@ -1,5 +1,6 @@
 using DeskAspMvc.Data;
 using DeskAspMvc.services;
+using DeskAspMvc.services.Services2;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -22,7 +23,10 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
 //var container = new UnityContainer();
 //container.RegisterType<IUserMasterRepository, UserMasterRepository>();
 //DependencyResolver.SetResolver(new UnityDependencyResolver(container));
-builder.Services.AddScoped<LocationService, LocationService>();
+builder.Services.AddScoped<LocationService2, LocationService2>();
+builder.Services.AddScoped<DeskService2, DeskService2>();
+
+
 builder.Services.AddScoped<RoleManager<IdentityRole>, RoleManager<IdentityRole>>();
 builder.Services.AddScoped<UserManager<IdentityUser>, UserManager<IdentityUser>>();
 

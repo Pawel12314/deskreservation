@@ -2,7 +2,7 @@
 
 namespace DeskModel.Models
 {
-    public class Location
+    public class Location : IModel
     {
         public int id { get; set; }
         [Required]

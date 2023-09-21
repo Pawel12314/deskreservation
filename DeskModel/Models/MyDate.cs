@@ -2,7 +2,7 @@
 
 namespace DeskModel.Models
 {
-    public class MyDate
+    public class MyDate : IModel
     {
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime date { get; set; }

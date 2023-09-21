@@ -2,7 +2,7 @@
 
 namespace DeskModel.Models
 {
-    public class Desk
+    public class Desk : IModel
     {
         [Required]
         [MinLength(3,ErrorMessage ="desk name should be longer than 3 characters")]

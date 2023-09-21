@@ -1,5 +1,6 @@
 using DeskAspMvc.Data;
 using DeskAspMvc.Models;
+using DeskModel.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace deskmtest3

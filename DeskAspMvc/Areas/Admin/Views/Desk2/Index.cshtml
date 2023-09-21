@@ -1,0 +1,34 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<DeskModel.Models.Desk>
+@{
+    ViewData["Title"] = "Index";
+    
+}
+
+@if (ViewBag.Status != null)
+{
+    <text>
+        <div class="alert @(ViewBag.Status.hasSucceeded==false? "alert-danger" : "alert-success")" role="alert">
+            @ViewBag.Status.message
+        </div>
+    </text>
+}
+<a asp-action="Create">Create</a>
+<ul class="list-group">
+    @foreach(var item in Model)
+    {
+        <li class="list-group-item 
+            @((ViewBag.editid??-1)==item.id?"list-group-item-info":"")
+            @((ViewBag.createid??-1)==item.id?"list-group-item-info":"")
+        "
+            
+        >
+            @item.name
+            <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+
+            <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+        </li>
+    }
+</ul>
