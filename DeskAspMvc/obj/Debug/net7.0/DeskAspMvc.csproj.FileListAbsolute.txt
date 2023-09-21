@@ -265,3 +265,6 @@ D:\rekrutacjadopracy\29_8_23_20_03\DeskAspMvc\DeskAspMvc\bin\Debug\net7.0\DeskAs
 D:\rekrutacjadopracy\29_8_23_20_03\DeskAspMvc\DeskAspMvc\bin\Debug\net7.0\DeskAspMvc.pdb
 D:\rekrutacjadopracy\29_8_23_20_03\DeskAspMvc\DeskAspMvc\obj\Debug\net7.0\DeskAspMvc.genruntimeconfig.cache
 D:\rekrutacjadopracy\29_8_23_20_03\DeskAspMvc\DeskAspMvc\obj\Debug\net7.0\ref\DeskAspMvc.dll
+D:\rekrutacjadopracy\29_8_23_20_03\DeskAspMvc\DeskAspMvc\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.InMemory.dll
+D:\rekrutacjadopracy\29_8_23_20_03\DeskAspMvc\DeskAspMvc\bin\Debug\net7.0\DeskModel.dll
+D:\rekrutacjadopracy\29_8_23_20_03\DeskAspMvc\DeskAspMvc\bin\Debug\net7.0\DeskModel.pdb

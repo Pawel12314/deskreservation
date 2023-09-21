@@ -12,7 +12,7 @@ namespace DeskAspMvc.Areas.Admin.Controllers
     [Authorize(Policy ="Administrator")]
     public class LocationController : Controller
     {
-
+/*
         private ApplicationDbContext _context { get; set; }
         
         public LocationController(ApplicationDbContext con)
@@ -108,6 +108,6 @@ namespace DeskAspMvc.Areas.Admin.Controllers
 
             return "hello from ajax";
         }
-       
+       */
     }
 }

@@ -11,7 +11,7 @@ namespace DeskAspMvc.Areas.Employee.Controllers
     [Area("Employee")]
     public class ReservationController : Controller
     {
-        private ApplicationDbContext _context { get; set; }
+        /*private ApplicationDbContext _context { get; set; }
 
         public ReservationController(ApplicationDbContext con)
         {
@@ -19,7 +19,7 @@ namespace DeskAspMvc.Areas.Employee.Controllers
         }
         public IActionResult Index()
         {
-            var list = _context.desks.Include(x=>x.location).Include(x=>x.reservation).ToList();
+            var list = _context.desks.Include(x=>x.location).Include(x=>x.reservations).ToList();
             var dtolist = new List<EmployeeDeskDTO>();
             foreach(var desk in list)
             {
@@ -31,7 +31,7 @@ namespace DeskAspMvc.Areas.Employee.Controllers
                 dto.id = desk.id;
                 dto.LocationName = desk.location.name;
                 dto.Name = desk.name;
-                dto.isAvailable = desk.reservation == null & desk.available;
+                dto.isAvailable = desk.reservations == null & desk.available;
                 dtolist.Add(dto);
             }
             return View(dtolist);
@@ -102,6 +102,6 @@ namespace DeskAspMvc.Areas.Employee.Controllers
             _context.SaveChanges();
             return RedirectToAction("YourReservations");
 
-        }
+        }*/
     }
 }

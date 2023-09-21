@@ -1,4 +1,5 @@
 using DeskAspMvc.Data;
+using DeskAspMvc.services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -18,6 +19,11 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
     .AddEntityFrameworkStores<ApplicationDbContext>();
 
 
+//var container = new UnityContainer();
+//container.RegisterType<IUserMasterRepository, UserMasterRepository>();
+//DependencyResolver.SetResolver(new UnityDependencyResolver(container));
+builder.Services.AddScoped<LocationService, LocationService>();
+
 builder.Services.AddRazorPages();
 
 builder.Services.AddAuthorization(options =>
@@ -34,6 +40,8 @@ builder.Services.AddAuthorization(options =>
 
 //builder.Services.AddRazorPages()
 var app = builder.Build();
+
+
 app.UseStaticFiles();
 app.UseAuthentication();
 app.UseRouting();

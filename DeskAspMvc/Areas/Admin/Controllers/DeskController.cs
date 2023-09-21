@@ -12,7 +12,7 @@ namespace DeskAspMvc.Areas.Admin.Controllers
     public class DeskController : Controller
     {
         
-        private ApplicationDbContext _context { get; set; }
+/*        private ApplicationDbContext _context { get; set; }
 
         public DeskController(ApplicationDbContext con)
         {
@@ -21,7 +21,7 @@ namespace DeskAspMvc.Areas.Admin.Controllers
 
         public IActionResult Index()
         {
-            var list = _context.desks.Include(x=>x.location).Include(x=>x.reservation).ToList();
+            var list = _context.desks.Include(x=>x.location).Include(x=>x.reservations).ToList();
             List<AdminDeskDTO> admindesks = new List<AdminDeskDTO>();
             foreach(var desk in list)
             {
@@ -30,9 +30,9 @@ namespace DeskAspMvc.Areas.Admin.Controllers
                 dtodesk.LocationName = desk.location ==null ? "no location provided":desk.location.name;
                 dtodesk.Name = desk.name;
                 dtodesk.isAvailable = desk.available;
-                if(desk.reservation!=null)
+                if(desk.reservations!=null)
                 {
-                    string? name = _context.Users.Where(x => x.Id.Equals(desk.reservation.ownerId)).SingleOrDefault().Email;
+                    string? name = _context.Users.Where(x => x.Id.Equals(desk.reservations.ownerId)).SingleOrDefault().Email;
                     dtodesk.reservedForUsername = name == null ? "---" : name;
                 }
                 admindesks.Add(dtodesk);
@@ -134,8 +134,8 @@ namespace DeskAspMvc.Areas.Admin.Controllers
             {
                 return RedirectToAction("Index");
             }
-            var model = _context.desks.Where(x => x.id == id).Include(x=>x.reservation).SingleOrDefault();
-            if (model.reservation!=null)
+            var model = _context.desks.Where(x => x.id == id).Include(x=>x.reservations).SingleOrDefault();
+            if (model.reservations!=null)
             {
                 return RedirectToAction("Index");
             }
@@ -155,6 +155,6 @@ namespace DeskAspMvc.Areas.Admin.Controllers
         {
             var list = _context.locations.ToList();
             return Json(list);
-        }
+        }*/
     }
 }

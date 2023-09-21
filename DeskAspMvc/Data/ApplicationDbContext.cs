@@ -1,4 +1,5 @@
-﻿using DeskAspMvc.Models;
+﻿//using DeskAspMvc.Models;
+using DeskModel.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -50,18 +51,27 @@ namespace DeskAspMvc.Data
                     entity.ToTable("Reservation");
                     entity.HasKey(x => x.id);
                     entity.HasOne(x => x.desk)
-                    .WithOne(x => x.reservation)
-                    .HasForeignKey<Reservation>(x => x.deskId);
+                    .WithMany(x => x.reservations)
+                    .HasForeignKey(x => x.deskId);
+                    entity.HasMany(x => x.dates)
+                    .WithMany(x => x.reservations);
                     //entity.HasOne(x => x.owner).WithMany(x => x.reservations).HasForeignKey(x => x.ownerId);
                     //entity.HasOne(x => x.location).WithMany(x => x.reservations).HasForeignKey(x => x.locationId);
                 }
             );
+            modelBuilder.Entity<MyDate>(
+                entity =>
+                {
+                    entity.ToTable("MyDate");
+                    entity.HasKey(x => x.id);
+                }
+                );
         }
         //public DbSet<TestItem> TestITem { get; set; }
         public DbSet<Desk> desks { get; set; }
         public DbSet<Location> locations { get; set; }
         public DbSet<Reservation> reservations { get; set; }
         //public DbSet<ReservationItem> reservationItems { get; set; }
-
+        public DbSet<MyDate> mydates { get; set; }
     }
 }

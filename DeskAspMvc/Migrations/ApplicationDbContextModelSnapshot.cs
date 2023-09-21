@@ -17,12 +17,12 @@ namespace DeskAspMvc.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.7")
+                .HasAnnotation("ProductVersion", "7.0.11")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("DeskAspMvc.Models.Desk", b =>
+            modelBuilder.Entity("DeskModel.Models.Desk", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -48,7 +48,7 @@ namespace DeskAspMvc.Migrations
                     b.ToTable("Desk", (string)null);
                 });
 
-            modelBuilder.Entity("DeskAspMvc.Models.Location", b =>
+            modelBuilder.Entity("DeskModel.Models.Location", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -66,7 +66,23 @@ namespace DeskAspMvc.Migrations
                     b.ToTable("Location", (string)null);
                 });
 
-            modelBuilder.Entity("DeskAspMvc.Models.Reservation", b =>
+            modelBuilder.Entity("DeskModel.Models.MyDate", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<DateTime>("date")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("id");
+
+                    b.ToTable("MyDate", (string)null);
+                });
+
+            modelBuilder.Entity("DeskModel.Models.Reservation", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -86,8 +102,7 @@ namespace DeskAspMvc.Migrations
 
                     b.HasKey("id");
 
-                    b.HasIndex("deskId")
-                        .IsUnique();
+                    b.HasIndex("deskId");
 
                     b.ToTable("Reservation", (string)null);
                 });
@@ -294,20 +309,35 @@ namespace DeskAspMvc.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("DeskAspMvc.Models.Desk", b =>
+            modelBuilder.Entity("MyDateReservation", b =>
                 {
-                    b.HasOne("DeskAspMvc.Models.Location", "location")
+                    b.Property<int>("datesid")
+                        .HasColumnType("int");
+
+                    b.Property<int>("reservationsid")
+                        .HasColumnType("int");
+
+                    b.HasKey("datesid", "reservationsid");
+
+                    b.HasIndex("reservationsid");
+
+                    b.ToTable("MyDateReservation");
+                });
+
+            modelBuilder.Entity("DeskModel.Models.Desk", b =>
+                {
+                    b.HasOne("DeskModel.Models.Location", "location")
                         .WithMany("desks")
                         .HasForeignKey("locationKey");
 
                     b.Navigation("location");
                 });
 
-            modelBuilder.Entity("DeskAspMvc.Models.Reservation", b =>
+            modelBuilder.Entity("DeskModel.Models.Reservation", b =>
                 {
-                    b.HasOne("DeskAspMvc.Models.Desk", "desk")
-                        .WithOne("reservation")
-                        .HasForeignKey("DeskAspMvc.Models.Reservation", "deskId")
+                    b.HasOne("DeskModel.Models.Desk", "desk")
+                        .WithMany("reservations")
+                        .HasForeignKey("deskId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -365,12 +395,27 @@ namespace DeskAspMvc.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("DeskAspMvc.Models.Desk", b =>
+            modelBuilder.Entity("MyDateReservation", b =>
                 {
-                    b.Navigation("reservation");
+                    b.HasOne("DeskModel.Models.MyDate", null)
+                        .WithMany()
+                        .HasForeignKey("datesid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DeskModel.Models.Reservation", null)
+                        .WithMany()
+                        .HasForeignKey("reservationsid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
-            modelBuilder.Entity("DeskAspMvc.Models.Location", b =>
+            modelBuilder.Entity("DeskModel.Models.Desk", b =>
+                {
+                    b.Navigation("reservations");
+                });
+
+            modelBuilder.Entity("DeskModel.Models.Location", b =>
                 {
                     b.Navigation("desks");
                 });
