@@ -1,6 +1,6 @@
 UWAGA!
 
-Jestem w trakcie pracy nad tym projektem. Nie jest to finalna werja.
+Jestem w trakcie pracy nad tym projektem. Nie jest to finalna wersja.
 
 Caution!
 This project is in development. This is not final version
