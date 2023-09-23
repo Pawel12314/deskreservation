@@ -19,6 +19,17 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 
+/*
+ * services.AddPersistenceServices();
+
+    services.AddControllers();
+ */
+/*builder.Services.AddCors(options =>
+{
+    options.AddPolicy("Open",
+        builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+});*/
+
 
 //var container = new UnityContainer();
 //container.RegisterType<IUserMasterRepository, UserMasterRepository>();
@@ -52,7 +63,9 @@ app.UseStaticFiles();
 app.UseAuthentication();
 app.UseRouting();
 app.UseAuthorization();
-app.UseEndpoints(endpoints =>
+
+/*app.UseCors("Open");
+*/app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute(
       name: "areas",

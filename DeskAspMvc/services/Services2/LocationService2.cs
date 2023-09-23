@@ -76,5 +76,6 @@ namespace DeskAspMvc.services.Services2
         {
             return this._context.locations.ToList();
         }
+        
     }
 }

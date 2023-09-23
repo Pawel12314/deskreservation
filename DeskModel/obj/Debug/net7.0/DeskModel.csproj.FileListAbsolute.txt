@@ -10,3 +10,15 @@ D:\rekrutacjadopracy\29_8_23_20_03\DeskAspMvc\DeskModel\obj\Debug\net7.0\DeskMod
 D:\rekrutacjadopracy\29_8_23_20_03\DeskAspMvc\DeskModel\obj\Debug\net7.0\refint\DeskModel.dll
 D:\rekrutacjadopracy\29_8_23_20_03\DeskAspMvc\DeskModel\obj\Debug\net7.0\DeskModel.pdb
 D:\rekrutacjadopracy\29_8_23_20_03\DeskAspMvc\DeskModel\obj\Debug\net7.0\ref\DeskModel.dll
+D:\rekrutacjadopracy\22_9_23_13_16\deskreservation\DeskModel\bin\Debug\net7.0\DeskModel.deps.json
+D:\rekrutacjadopracy\22_9_23_13_16\deskreservation\DeskModel\bin\Debug\net7.0\DeskModel.dll
+D:\rekrutacjadopracy\22_9_23_13_16\deskreservation\DeskModel\bin\Debug\net7.0\DeskModel.pdb
+D:\rekrutacjadopracy\22_9_23_13_16\deskreservation\DeskModel\obj\Debug\net7.0\DeskModel.csproj.AssemblyReference.cache
+D:\rekrutacjadopracy\22_9_23_13_16\deskreservation\DeskModel\obj\Debug\net7.0\DeskModel.GeneratedMSBuildEditorConfig.editorconfig
+D:\rekrutacjadopracy\22_9_23_13_16\deskreservation\DeskModel\obj\Debug\net7.0\DeskModel.AssemblyInfoInputs.cache
+D:\rekrutacjadopracy\22_9_23_13_16\deskreservation\DeskModel\obj\Debug\net7.0\DeskModel.AssemblyInfo.cs
+D:\rekrutacjadopracy\22_9_23_13_16\deskreservation\DeskModel\obj\Debug\net7.0\DeskModel.csproj.CoreCompileInputs.cache
+D:\rekrutacjadopracy\22_9_23_13_16\deskreservation\DeskModel\obj\Debug\net7.0\DeskModel.dll
+D:\rekrutacjadopracy\22_9_23_13_16\deskreservation\DeskModel\obj\Debug\net7.0\refint\DeskModel.dll
+D:\rekrutacjadopracy\22_9_23_13_16\deskreservation\DeskModel\obj\Debug\net7.0\DeskModel.pdb
+D:\rekrutacjadopracy\22_9_23_13_16\deskreservation\DeskModel\obj\Debug\net7.0\ref\DeskModel.dll

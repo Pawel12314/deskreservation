@@ -3,6 +3,7 @@ using DeskAspMvc.services.DTO;
 using DeskAspMvc.services.DTO.OperationTypes;
 using DeskAspMvc.services.DTO.StatusTypes;
 using DeskModel.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace DeskAspMvc.services.Services2
 {
@@ -27,7 +28,12 @@ namespace DeskAspMvc.services.Services2
 
         protected override void _Create(IModel entry)
         {
-            this._context.desks.Add((Desk)entry);
+            Desk _entry = (Desk)entry;
+            /*if(_entry.locationKey!=null)
+            {
+                
+            }*/
+            this._context.desks.Add(_entry);
         }
 
         protected override bool _DoesExist(int id)
@@ -44,9 +50,14 @@ namespace DeskAspMvc.services.Services2
         {
             if (id == null)
                 return null;
-            return this._context.desks.Find(id);
+            return this._context.desks.Include(x => x.location).FirstOrDefault(x => x.id == (id ?? -1));
         }
-
+        public Desk GetByIdWithLocation(int? id)
+        {
+            if (id == null)
+                return null;
+            return this._context.desks.Include(x=>x.location).FirstOrDefault(x=>x.id==(id??-1));
+        }
         protected override List<IModel> _GetList()
         {
             return null;
@@ -54,6 +65,35 @@ namespace DeskAspMvc.services.Services2
         public new List<Desk> GetList()
         {
             return this._context.desks.ToList();
+        }
+        public ServiceOperationStatusObject SetDeskLocation(Desk desk, Location location)
+        {
+            desk.location = location;
+            desk.locationKey = location.id;
+            this._context.desks.Update(desk);
+            this._context.SaveChanges();
+            var status = ServiceOperationStatusObject
+                .getOperationStatusObject(
+                new SetDeskLocationMessage(), new SucceededMessage()
+                );
+            return status;
+        }
+        public ServiceOperationStatusObject RemoveDeskLocation(Desk desk)
+        {
+            desk.location = null;
+            desk.locationKey = null;
+            this._context.desks.Update(desk);
+            this._context.SaveChanges();
+            var status = ServiceOperationStatusObject
+                .getOperationStatusObject(
+                    new RemoveDeskLocationMessage(),
+                    new SucceededMessage()
+                );
+            return status;
+        }
+        public new List<Desk> GetListWithLocation()
+        {
+            return this._context.desks.Include(x => x.location).ToList();
         }
     }
 }

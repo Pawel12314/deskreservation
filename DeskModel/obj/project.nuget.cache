@@ -1,8 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "dSNr6haLLjX1Y8LYgOKTxsnf2XtRAYFRRkpqkYkoxurA9GiJba2KRODqowALQICCviWJN1mvT0RbiHobt4C/GQ==",
+  "dgSpecHash": "MJUEZZrgqPAOc6ZL85xOHnQ1JJvjPu6nv1Lh5DGvySFDPzZxrLydaaRkVIm3Mi7izUU3z+LAwFXHAjWhmv3h5w==",
   "success": true,
-  "projectFilePath": "D:\\rekrutacjadopracy\\29_8_23_20_03\\DeskAspMvc\\DeskModel\\DeskModel.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\rekrutacjadopracy\\22_9_23_13_16\\deskreservation\\DeskModel\\DeskModel.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\7.0.11\\microsoft.aspnetcore.jsonpatch.7.0.11.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\7.0.11\\microsoft.aspnetcore.mvc.newtonsoftjson.7.0.11.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\rekrutacjadopracy\\29_8_23_20_03\\DeskAspMvc\\DeskModel\\DeskModel.csproj": {}
+    "D:\\rekrutacjadopracy\\22_9_23_13_16\\deskreservation\\DeskModel\\DeskModel.csproj": {}
   },
   "projects": {
-    "D:\\rekrutacjadopracy\\29_8_23_20_03\\DeskAspMvc\\DeskModel\\DeskModel.csproj": {
+    "D:\\rekrutacjadopracy\\22_9_23_13_16\\deskreservation\\DeskModel\\DeskModel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\rekrutacjadopracy\\29_8_23_20_03\\DeskAspMvc\\DeskModel\\DeskModel.csproj",
+        "projectUniqueName": "D:\\rekrutacjadopracy\\22_9_23_13_16\\deskreservation\\DeskModel\\DeskModel.csproj",
         "projectName": "DeskModel",
-        "projectPath": "D:\\rekrutacjadopracy\\29_8_23_20_03\\DeskAspMvc\\DeskModel\\DeskModel.csproj",
+        "projectPath": "D:\\rekrutacjadopracy\\22_9_23_13_16\\deskreservation\\DeskModel\\DeskModel.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\rekrutacjadopracy\\29_8_23_20_03\\DeskAspMvc\\DeskModel\\obj\\",
+        "outputPath": "D:\\rekrutacjadopracy\\22_9_23_13_16\\deskreservation\\DeskModel\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,12 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

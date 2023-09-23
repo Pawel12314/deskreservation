@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace DeskModel.Models
 {
@@ -9,6 +10,7 @@ namespace DeskModel.Models
         [MaxLength(30,ErrorMessage ="desk name should be shorter than 30 characters")]
         public string name { get; set; }
         public int id { get; set; }
+        [DisplayName("location of desk")]
         public int? locationKey { get; set; }
         public Location? location { get; set; }
         //public int? reservationId { get; set; }

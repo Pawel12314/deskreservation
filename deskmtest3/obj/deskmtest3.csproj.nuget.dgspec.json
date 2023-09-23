@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\rekrutacjadopracy\\29_8_23_20_03\\DeskAspMvc\\deskmtest3\\deskmtest3.csproj": {}
+    "D:\\rekrutacjadopracy\\22_9_23_13_16\\deskreservation\\deskmtest3\\deskmtest3.csproj": {}
   },
   "projects": {
-    "D:\\rekrutacjadopracy\\29_8_23_20_03\\DeskAspMvc\\DeskAspMvc\\DeskAspMvc.csproj": {
+    "D:\\rekrutacjadopracy\\22_9_23_13_16\\deskreservation\\DeskAspMvc\\DeskAspMvc.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\rekrutacjadopracy\\29_8_23_20_03\\DeskAspMvc\\DeskAspMvc\\DeskAspMvc.csproj",
+        "projectUniqueName": "D:\\rekrutacjadopracy\\22_9_23_13_16\\deskreservation\\DeskAspMvc\\DeskAspMvc.csproj",
         "projectName": "DeskAspMvc",
-        "projectPath": "D:\\rekrutacjadopracy\\29_8_23_20_03\\DeskAspMvc\\DeskAspMvc\\DeskAspMvc.csproj",
+        "projectPath": "D:\\rekrutacjadopracy\\22_9_23_13_16\\deskreservation\\DeskAspMvc\\DeskAspMvc.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\rekrutacjadopracy\\29_8_23_20_03\\DeskAspMvc\\DeskAspMvc\\obj\\",
+        "outputPath": "D:\\rekrutacjadopracy\\22_9_23_13_16\\deskreservation\\DeskAspMvc\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -29,8 +29,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\rekrutacjadopracy\\29_8_23_20_03\\DeskAspMvc\\DeskModel\\DeskModel.csproj": {
-                "projectPath": "D:\\rekrutacjadopracy\\29_8_23_20_03\\DeskAspMvc\\DeskModel\\DeskModel.csproj"
+              "D:\\rekrutacjadopracy\\22_9_23_13_16\\deskreservation\\DeskModel\\DeskModel.csproj": {
+                "projectPath": "D:\\rekrutacjadopracy\\22_9_23_13_16\\deskreservation\\DeskModel\\DeskModel.csproj"
               }
             }
           }
@@ -61,6 +61,10 @@
               "target": "Package",
               "version": "[7.0.7, )"
             },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
             "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
               "version": "[7.0.11, )"
@@ -76,6 +80,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[7.0.9, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             }
           },
           "imports": [
@@ -101,14 +109,14 @@
         }
       }
     },
-    "D:\\rekrutacjadopracy\\29_8_23_20_03\\DeskAspMvc\\DeskModel\\DeskModel.csproj": {
+    "D:\\rekrutacjadopracy\\22_9_23_13_16\\deskreservation\\DeskModel\\DeskModel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\rekrutacjadopracy\\29_8_23_20_03\\DeskAspMvc\\DeskModel\\DeskModel.csproj",
+        "projectUniqueName": "D:\\rekrutacjadopracy\\22_9_23_13_16\\deskreservation\\DeskModel\\DeskModel.csproj",
         "projectName": "DeskModel",
-        "projectPath": "D:\\rekrutacjadopracy\\29_8_23_20_03\\DeskAspMvc\\DeskModel\\DeskModel.csproj",
+        "projectPath": "D:\\rekrutacjadopracy\\22_9_23_13_16\\deskreservation\\DeskModel\\DeskModel.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\rekrutacjadopracy\\29_8_23_20_03\\DeskAspMvc\\DeskModel\\obj\\",
+        "outputPath": "D:\\rekrutacjadopracy\\22_9_23_13_16\\deskreservation\\DeskModel\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -136,6 +144,12 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -156,14 +170,14 @@
         }
       }
     },
-    "D:\\rekrutacjadopracy\\29_8_23_20_03\\DeskAspMvc\\deskmtest3\\deskmtest3.csproj": {
+    "D:\\rekrutacjadopracy\\22_9_23_13_16\\deskreservation\\deskmtest3\\deskmtest3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\rekrutacjadopracy\\29_8_23_20_03\\DeskAspMvc\\deskmtest3\\deskmtest3.csproj",
+        "projectUniqueName": "D:\\rekrutacjadopracy\\22_9_23_13_16\\deskreservation\\deskmtest3\\deskmtest3.csproj",
         "projectName": "deskmtest3",
-        "projectPath": "D:\\rekrutacjadopracy\\29_8_23_20_03\\DeskAspMvc\\deskmtest3\\deskmtest3.csproj",
+        "projectPath": "D:\\rekrutacjadopracy\\22_9_23_13_16\\deskreservation\\deskmtest3\\deskmtest3.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\rekrutacjadopracy\\29_8_23_20_03\\DeskAspMvc\\deskmtest3\\obj\\",
+        "outputPath": "D:\\rekrutacjadopracy\\22_9_23_13_16\\deskreservation\\deskmtest3\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -180,8 +194,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\rekrutacjadopracy\\29_8_23_20_03\\DeskAspMvc\\DeskAspMvc\\DeskAspMvc.csproj": {
-                "projectPath": "D:\\rekrutacjadopracy\\29_8_23_20_03\\DeskAspMvc\\DeskAspMvc\\DeskAspMvc.csproj"
+              "D:\\rekrutacjadopracy\\22_9_23_13_16\\deskreservation\\DeskAspMvc\\DeskAspMvc.csproj": {
+                "projectPath": "D:\\rekrutacjadopracy\\22_9_23_13_16\\deskreservation\\DeskAspMvc\\DeskAspMvc.csproj"
               }
             }
           }
@@ -203,6 +217,10 @@
             "MSTest.TestFramework": {
               "target": "Package",
               "version": "[2.2.10, )"
+            },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[7.0.11, )"
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",

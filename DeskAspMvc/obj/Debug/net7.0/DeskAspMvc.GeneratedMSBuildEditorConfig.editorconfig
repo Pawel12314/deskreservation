@@ -9,133 +9,133 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = DeskAspMvc
 build_property.RootNamespace = DeskAspMvc
-build_property.ProjectDir = D:\rekrutacjadopracy\29_8_23_20_03\DeskAspMvc\DeskAspMvc\
+build_property.ProjectDir = D:\rekrutacjadopracy\22_9_23_13_16\deskreservation\DeskAspMvc\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\rekrutacjadopracy\29_8_23_20_03\DeskAspMvc\DeskAspMvc
+build_property.MSBuildProjectDirectory = D:\rekrutacjadopracy\22_9_23_13_16\deskreservation\DeskAspMvc
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/rekrutacjadopracy/29_8_23_20_03/DeskAspMvc/DeskAspMvc/Areas/Admin/Views/Desk2/Create.cshtml]
+[D:/rekrutacjadopracy/22_9_23_13_16/deskreservation/DeskAspMvc/Areas/Admin/Views/Desk2/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGVzazJcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rekrutacjadopracy/29_8_23_20_03/DeskAspMvc/DeskAspMvc/Areas/Admin/Views/Desk2/Edit.cshtml]
+[D:/rekrutacjadopracy/22_9_23_13_16/deskreservation/DeskAspMvc/Areas/Admin/Views/Desk2/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGVzazJcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rekrutacjadopracy/29_8_23_20_03/DeskAspMvc/DeskAspMvc/Areas/Admin/Views/Desk2/Index.cshtml]
+[D:/rekrutacjadopracy/22_9_23_13_16/deskreservation/DeskAspMvc/Areas/Admin/Views/Desk2/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGVzazJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rekrutacjadopracy/29_8_23_20_03/DeskAspMvc/DeskAspMvc/Areas/Admin/Views/Desk/Create.cshtml]
+[D:/rekrutacjadopracy/22_9_23_13_16/deskreservation/DeskAspMvc/Areas/Admin/Views/Desk/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGVza1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rekrutacjadopracy/29_8_23_20_03/DeskAspMvc/DeskAspMvc/Areas/Admin/Views/Desk/Edit.cshtml]
+[D:/rekrutacjadopracy/22_9_23_13_16/deskreservation/DeskAspMvc/Areas/Admin/Views/Desk/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGVza1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rekrutacjadopracy/29_8_23_20_03/DeskAspMvc/DeskAspMvc/Areas/Admin/Views/Desk/Index.cshtml]
+[D:/rekrutacjadopracy/22_9_23_13_16/deskreservation/DeskAspMvc/Areas/Admin/Views/Desk/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGVza1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rekrutacjadopracy/29_8_23_20_03/DeskAspMvc/DeskAspMvc/Areas/Admin/Views/Location2/Create.cshtml]
+[D:/rekrutacjadopracy/22_9_23_13_16/deskreservation/DeskAspMvc/Areas/Admin/Views/Location2/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTG9jYXRpb24yXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rekrutacjadopracy/29_8_23_20_03/DeskAspMvc/DeskAspMvc/Areas/Admin/Views/Location2/Edit.cshtml]
+[D:/rekrutacjadopracy/22_9_23_13_16/deskreservation/DeskAspMvc/Areas/Admin/Views/Location2/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTG9jYXRpb24yXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rekrutacjadopracy/29_8_23_20_03/DeskAspMvc/DeskAspMvc/Areas/Admin/Views/Location2/Index.cshtml]
+[D:/rekrutacjadopracy/22_9_23_13_16/deskreservation/DeskAspMvc/Areas/Admin/Views/Location2/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTG9jYXRpb24yXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rekrutacjadopracy/29_8_23_20_03/DeskAspMvc/DeskAspMvc/Areas/Admin/Views/Location/Create.cshtml]
+[D:/rekrutacjadopracy/22_9_23_13_16/deskreservation/DeskAspMvc/Areas/Admin/Views/Location/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTG9jYXRpb25cQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rekrutacjadopracy/29_8_23_20_03/DeskAspMvc/DeskAspMvc/Areas/Admin/Views/Location/Edit.cshtml]
+[D:/rekrutacjadopracy/22_9_23_13_16/deskreservation/DeskAspMvc/Areas/Admin/Views/Location/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTG9jYXRpb25cRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rekrutacjadopracy/29_8_23_20_03/DeskAspMvc/DeskAspMvc/Areas/Admin/Views/Location/Index.cshtml]
+[D:/rekrutacjadopracy/22_9_23_13_16/deskreservation/DeskAspMvc/Areas/Admin/Views/Location/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTG9jYXRpb25cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rekrutacjadopracy/29_8_23_20_03/DeskAspMvc/DeskAspMvc/Areas/Admin/Views/_ViewImports.cshtml]
+[D:/rekrutacjadopracy/22_9_23_13_16/deskreservation/DeskAspMvc/Areas/Admin/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rekrutacjadopracy/29_8_23_20_03/DeskAspMvc/DeskAspMvc/Areas/Admin/Views/_ViewStart.cshtml]
+[D:/rekrutacjadopracy/22_9_23_13_16/deskreservation/DeskAspMvc/Areas/Admin/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rekrutacjadopracy/29_8_23_20_03/DeskAspMvc/DeskAspMvc/Areas/Employee/Views/AdminAccess/AdminTask.cshtml]
+[D:/rekrutacjadopracy/22_9_23_13_16/deskreservation/DeskAspMvc/Areas/Employee/Views/AdminAccess/AdminTask.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW1wbG95ZWVcVmlld3NcQWRtaW5BY2Nlc3NcQWRtaW5UYXNrLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rekrutacjadopracy/29_8_23_20_03/DeskAspMvc/DeskAspMvc/Areas/Employee/Views/AdminAccess/Gain.cshtml]
+[D:/rekrutacjadopracy/22_9_23_13_16/deskreservation/DeskAspMvc/Areas/Employee/Views/AdminAccess/Gain.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW1wbG95ZWVcVmlld3NcQWRtaW5BY2Nlc3NcR2Fpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rekrutacjadopracy/29_8_23_20_03/DeskAspMvc/DeskAspMvc/Areas/Employee/Views/AdminAccess/Revoke.cshtml]
+[D:/rekrutacjadopracy/22_9_23_13_16/deskreservation/DeskAspMvc/Areas/Employee/Views/AdminAccess/Revoke.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW1wbG95ZWVcVmlld3NcQWRtaW5BY2Nlc3NcUmV2b2tlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rekrutacjadopracy/29_8_23_20_03/DeskAspMvc/DeskAspMvc/Areas/Employee/Views/Reservation/Index.cshtml]
+[D:/rekrutacjadopracy/22_9_23_13_16/deskreservation/DeskAspMvc/Areas/Employee/Views/Reservation/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW1wbG95ZWVcVmlld3NcUmVzZXJ2YXRpb25cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rekrutacjadopracy/29_8_23_20_03/DeskAspMvc/DeskAspMvc/Areas/Employee/Views/Reservation/Reserve.cshtml]
+[D:/rekrutacjadopracy/22_9_23_13_16/deskreservation/DeskAspMvc/Areas/Employee/Views/Reservation/Reserve.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW1wbG95ZWVcVmlld3NcUmVzZXJ2YXRpb25cUmVzZXJ2ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rekrutacjadopracy/29_8_23_20_03/DeskAspMvc/DeskAspMvc/Areas/Employee/Views/Reservation/YourReservations.cshtml]
+[D:/rekrutacjadopracy/22_9_23_13_16/deskreservation/DeskAspMvc/Areas/Employee/Views/Reservation/YourReservations.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW1wbG95ZWVcVmlld3NcUmVzZXJ2YXRpb25cWW91clJlc2VydmF0aW9ucy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rekrutacjadopracy/29_8_23_20_03/DeskAspMvc/DeskAspMvc/Areas/Employee/Views/_ViewImports.cshtml]
+[D:/rekrutacjadopracy/22_9_23_13_16/deskreservation/DeskAspMvc/Areas/Employee/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW1wbG95ZWVcVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rekrutacjadopracy/29_8_23_20_03/DeskAspMvc/DeskAspMvc/Areas/Employee/Views/_ViewStart.cshtml]
+[D:/rekrutacjadopracy/22_9_23_13_16/deskreservation/DeskAspMvc/Areas/Employee/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW1wbG95ZWVcVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rekrutacjadopracy/29_8_23_20_03/DeskAspMvc/DeskAspMvc/Areas/Identity/Pages/_ViewStart.cshtml]
+[D:/rekrutacjadopracy/22_9_23_13_16/deskreservation/DeskAspMvc/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rekrutacjadopracy/29_8_23_20_03/DeskAspMvc/DeskAspMvc/Pages/Error.cshtml]
+[D:/rekrutacjadopracy/22_9_23_13_16/deskreservation/DeskAspMvc/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rekrutacjadopracy/29_8_23_20_03/DeskAspMvc/DeskAspMvc/Pages/Index.cshtml]
+[D:/rekrutacjadopracy/22_9_23_13_16/deskreservation/DeskAspMvc/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rekrutacjadopracy/29_8_23_20_03/DeskAspMvc/DeskAspMvc/Pages/Privacy.cshtml]
+[D:/rekrutacjadopracy/22_9_23_13_16/deskreservation/DeskAspMvc/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rekrutacjadopracy/29_8_23_20_03/DeskAspMvc/DeskAspMvc/Pages/Shared/_LoginPartial.cshtml]
+[D:/rekrutacjadopracy/22_9_23_13_16/deskreservation/DeskAspMvc/Pages/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rekrutacjadopracy/29_8_23_20_03/DeskAspMvc/DeskAspMvc/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[D:/rekrutacjadopracy/22_9_23_13_16/deskreservation/DeskAspMvc/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rekrutacjadopracy/29_8_23_20_03/DeskAspMvc/DeskAspMvc/Pages/_ViewImports.cshtml]
+[D:/rekrutacjadopracy/22_9_23_13_16/deskreservation/DeskAspMvc/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rekrutacjadopracy/29_8_23_20_03/DeskAspMvc/DeskAspMvc/Pages/_ViewStart.cshtml]
+[D:/rekrutacjadopracy/22_9_23_13_16/deskreservation/DeskAspMvc/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rekrutacjadopracy/29_8_23_20_03/DeskAspMvc/DeskAspMvc/Pages/Shared/_Layout.cshtml]
+[D:/rekrutacjadopracy/22_9_23_13_16/deskreservation/DeskAspMvc/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-qf2ywisdd3
