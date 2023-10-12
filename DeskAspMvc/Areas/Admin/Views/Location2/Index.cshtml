@@ -1,7 +1,5 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@model IEnumerable<DeskModel.Models.Location>
+﻿
+@model IEnumerable<DeskAspMvc.Models.Models.Location>
 @{
     ViewData["Title"] = "Index";
     
@@ -15,20 +13,35 @@
         </div>
     </text>
 }
-<a asp-action="Create">Create</a>
-<ul class="list-group">
+<a class="btn btn-primary my-5" asp-action="Create">Create</a>
+<table class="table">
+    <thead>
+        <tr class="bg-primary text-white">
+            <td>
+                @Html.DisplayNameFor(model=>model.Name)
+            </td>
+            <td>
+
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+
+    
     @foreach(var item in Model)
     {
-        <li class="list-group-item 
-            @((ViewBag.editid??-1)==item.id?"list-group-item-info":"")
-            @((ViewBag.createid??-1)==item.id?"list-group-item-info":"")
-        "
-            
-        >
-            @item.name
-            <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
-
-            <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
-        </li>
+        <tr class=" 
+            @((ViewBag.editid??-1)==item.Id?"bg-info":"")
+            @((ViewBag.createid??-1)==item.Id?"bg-info":"")">
+            <td>
+                @Html.DisplayFor(model=>item.Name)
+            </td>   
+           <td>
+                <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">Edit</a> 
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+           </td>
+        </tr>
     }
-</ul>
+    </tbody>
+    
+</table>

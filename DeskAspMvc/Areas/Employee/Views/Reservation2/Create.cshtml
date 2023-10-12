@@ -1,0 +1,179 @@
+﻿@using Newtonsoft.Json;
+
+
+
+<select  id="desksearchableid">
+    <option value="" >please select desk for reservation purpose</option>
+</select>
+<div id="dateformid" class="row border border-success text-white">
+    <div class="col-3">
+        <span class="text-success">
+            day:
+        </span>
+        <input class="border border-success text-success" id="dayinputid" type="number"/>
+    </div>
+    <div class="col-3">
+        <span class="text-success">
+            month:
+        </span>
+        <input class="border border-success text-success" id="monthinputid" type="number" />
+    </div>
+    <div class="col-3">
+        <span class="text-success">
+            year:
+        </span>
+        <input class="border border-success text-success" id="yearinputid" type="number" />
+    </div>
+    <div class="col-3">
+        <span class="text-success">
+            nr of weeks
+        </span>
+        <input class="border border-success text-success" id="weeksinputid" type="number" />
+    </div>
+</div>
+<button class="btn btn-success rounded mx-3 my-3 text-white" id="movebackbuttonid" onclick="MoveBackwardFunction(this)">
+    move back by a week
+</button>
+<button class="btn btn-success rounded mx-3 my-3 text-white" id="moveforwardbuttonid" onclick="MoveForwardFunction(this)">
+    move forward by a week
+</button>
+<button class="btn btn-success rounded mx-3 my-3 text-white" id="buttonForm">
+    load
+</button>
+
+<div  id="content">
+
+</div>
+@section scripts {
+<script type="text/javascript">
+    var $selectDesk;
+    
+    function SetFieldsWithDate(date,weeks)
+    {
+            $("#dayinputid").val(date.getDate());
+            $("#monthinputid").val(date.getMonth() + 1);
+            $("#yearinputid").val(date.getFullYear());
+            $("#weeksinputid").val(weeks);
+    }
+    function Init()
+    {
+        var currentDate = new Date()
+        SetFieldsWithDate(currentDate,4);
+    }
+
+    Init();
+    
+    function AddWeeks(dt, n) {
+        return new Date(dt.setDate(dt.getDate() + (n * 7)));
+    }
+    function GetDate()
+    {
+        let day = $("#dayinputid").val();
+        let month = $("#monthinputid").val();
+        let year = $("#yearinputid").val();
+        
+        dt = new Date(year, month-1, day);
+
+        return dt;
+    }
+    function MoveForwardFunction(data)
+    {
+        let deskid = $selectDesk[0].selectize.getValue();
+        let deskname = $("#deskdropdownid :selected").text()
+        let weeks = $("#weeksinputid").val();
+        dt = GetDate();
+        var moveddate = AddWeeks(dt,1);
+        SetFieldsWithDate(moveddate,weeks)
+        
+        Fun(deskid, moveddate.getDate(), moveddate.getMonth() + 1, moveddate.getFullYear(), weeks)
+
+    }
+        function MoveBackwardFunction(data) {
+            let deskid = $selectDesk[0].selectize.getValue();
+            let deskname = $("#deskdropdownid :selected").text()
+            let weeks = $("#weeksinputid").val();
+
+            dt = GetDate();
+            var moveddate = AddWeeks(dt, -1);
+            SetFieldsWithDate(moveddate,weeks);
+            
+            Fun(deskid, moveddate.getDate(), moveddate.getMonth() + 1, moveddate.getFullYear(), weeks)
+
+        }
+        function GetCalendar()
+        {
+            let deskid = $selectDesk[0].selectize.getValue();
+            let deskname = $("#deskdropdownid :selected").text()
+            let day = $("#dayinputid").val();
+            let month = $("#monthinputid").val();
+            let year = $("#yearinputid").val();
+            let weeks = $("#weeksinputid").val();
+            Fun(deskid, day, month, year, weeks)
+        }
+    $("#buttonForm").click(function (e) {
+        GetCalendar();
+    });
+
+    function Succeeded(data)
+    {
+        $("#content").html(data)
+    }
+    function Failed(data)
+    {
+    }
+    function Fun(deskid,day,month,year,weeks)
+    {
+            GetAJAX("/Employee/Reservation2/GetCalendarCreate?deskid="+deskid+"&&day="+day+"&&month="+month+"&&year="+year+"&&weeks="+weeks, "GET", "html", Succeeded, Failed)
+    }
+        function replacer(key, value) {
+            if (value.desks!==null) {
+                return null
+            }
+            return value
+        }
+        function GetDeskClass(desk, element) {
+            if (desk.available == true) {
+                return null
+            }
+            return "bg-warning";
+        }
+
+        $( document ).ready(function() {
+            $selectDesk = $('#desksearchableid').selectize({
+                valueField: 'Id',
+                labelField: 'Name',
+                searchField: ['Location.Name','Name'],
+                sortField: 'Name',
+                nesting:true,
+                options: @Html.Raw(JsonConvert.SerializeObject(ViewBag.Desks)),
+                onInitialize: function () {               
+                },
+                render: {
+                    option: function (item, escape) {
+                        var statusclass = null;
+                        var statusmsg = null;
+                        if(item.Available==false || item.Location.Id==-1)
+                        {
+                            statusclass = "bg-white text-primary border rounded border-primary";
+                            statusmsg="this desk is unavailable";
+                        }
+                        else
+                        {
+                            statusclass = "bg-white text-success border rounded border-success";
+                            statusmsg="you can book this desk";
+                        }
+                        
+                        return '<div class="selectDiv '+statusclass+'" >' +
+                            '<span class="mainName"><b>' + escape(item.Name) + '</b></span > <br />' +
+                            '<span class="subLabel">' + escape(item.Location.Name) + '</span><br/>' +
+                            '<span>'+statusmsg+'</span><br/>'+
+                            '</div>';
+                        
+                    }
+                }
+            })
+        });
+        
+</script>
+
+}

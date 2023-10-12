@@ -1,6 +1,6 @@
 ﻿namespace DeskAspMvc.services.DTO.OperationTypes
 {
-    public class SetDeskLocationMessage : IOperationMessage
+    public sealed class SetDeskLocationMessage : IOperationMessage
     {
         public string GetMessage()
         {

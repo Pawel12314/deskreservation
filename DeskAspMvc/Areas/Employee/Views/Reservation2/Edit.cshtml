@@ -1,0 +1,153 @@
+﻿
+
+@if (ViewBag.Status != null)
+{
+    <text>
+        <div class="alert @(ViewBag.Status.hasSucceeded==false? "alert-danger" : "alert-success")" role="alert">
+            @ViewBag.Status.message
+        </div>
+    </text>
+}
+<div class="row border border-success text-success">
+    <div class="col-6">
+       Current starting date of reservation: @ViewBag.BeginDate
+    </div>
+    <div class="col-6">
+        Current ending date of reservation: @ViewBag.EndDate
+    </div>
+</div>
+<div id="dateformid" class="row border border-success text-white">
+    <div class="col-3">
+        <span class="text-success">
+            day:
+        </span>
+        <input class="border border-success text-success" id="dayinputid" type="number" />
+    </div>
+    <div class="col-3">
+        <span class="text-success">
+            month:
+        </span>
+        <input class="border border-success text-success" id="monthinputid" type="number" />
+    </div>
+    <div class="col-3">
+        <span class="text-success">
+            year:
+        </span>
+        <input class="border border-success text-success" id="yearinputid" type="number" />
+    </div>
+    <div class="col-3">
+        <span class="text-success">
+            nr of weeks
+        </span>
+        <input class="border border-success text-success" id="weeksinputid" type="number" />
+    </div>
+</div>
+<button class="btn btn-success rounded mx-3 my-3 text-white" id="movebackbuttonid" onclick="MoveBackwardFunction(this)">
+    move back by a week
+</button>
+<button class="btn btn-success rounded mx-3 my-3 text-white" id="moveforwardbuttonid" onclick="MoveForwardFunction(this)">
+    move forward by a week
+</button>
+<button class="btn btn-success rounded mx-3 my-3 text-white" id="buttonForm">
+    load
+</button>
+
+<div id="content">
+</div>
+@section scripts {
+    <script type="text/javascript">
+
+
+
+        var reservationid = @Html.Raw(Json.Serialize(ViewBag.ReservationId));
+
+
+
+        function Init() {
+            var strdate = @Html.Raw(Json.Serialize(ViewBag.BeginDate));
+            var day = strdate.split("/")[0];
+            var month = strdate.split("/")[1];
+            var year = strdate.split("/")[2];
+
+            $("#dayinputid").val(day);
+            $("#monthinputid").val(month);
+            $("#yearinputid").val(year);
+            $("#weeksinputid").val(4);
+            GetCalendar();
+        }
+        function SetFieldsWithDate(date, weeks) {
+            $("#dayinputid").val(date.getDate());
+            $("#monthinputid").val(date.getMonth() + 1);
+            $("#yearinputid").val(date.getFullYear());
+            $("#weeksinputid").val(weeks);
+        }
+
+        function GetDate() {
+            let day = $("#dayinputid").val();
+            let month = $("#monthinputid").val();
+            let year = $("#yearinputid").val();
+
+            dt = new Date(year, month - 1, day);
+
+            return dt;
+        }
+
+        Init();
+        
+        function AddWeeks(dt, n) {
+            return new Date(dt.setDate(dt.getDate() + (n * 7)));
+        }
+
+        function MoveForwardFunction(data) {
+            let deskid = $("#deskdropdownid").val()
+            let deskname = $("#deskdropdownid :selected").text()
+            let weeks = $("#weeksinputid").val();
+
+
+
+            dt = GetDate()
+            moveddate = AddWeeks(dt, 1);
+
+            SetFieldsWithDate(dt,weeks)
+            
+            Fun(reservationid, moveddate.getDate(), moveddate.getMonth() + 1, moveddate.getFullYear(), weeks)
+
+        }
+        function MoveBackwardFunction(data) {
+            let deskid = $("#deskdropdownid").val()
+            let deskname = $("#deskdropdownid :selected").text()
+            let weeks = $("#weeksinputid").val();
+
+            dt = GetDate();
+            moveddate = AddWeeks(dt, -1);
+
+            SetFieldsWithDate(dt,weeks);
+
+            Fun(reservationid, moveddate.getDate(), moveddate.getMonth() + 1, moveddate.getFullYear(), weeks)
+
+        }
+        function GetCalendar()
+        {
+            let deskid = $("#deskdropdownid").val()
+            let deskname = $("#deskdropdownid :selected").text()
+            let day = $("#dayinputid").val();
+            let month = $("#monthinputid").val();
+            let year = $("#yearinputid").val();
+            let weeks = $("#weeksinputid").val();
+            Fun(reservationid, day, month, year, weeks)
+        }
+        $("#buttonForm").click(function (e) {
+            GetCalendar(); 
+        });
+
+        function Succeeded(data) {
+            $("#content").html(data)
+        }
+        function Failed(data) {
+        }
+        function Fun(deskid, day, month, year, weeks) {
+            GetAJAX("/Employee/Reservation2/GetCalendarEdit?reservationid=" + deskid + "&&day=" + day + "&&month=" + month + "&&year=" + year + "&&weeks=" + weeks, "GET", "html", Succeeded, Failed)
+        }
+    </script>
+
+}

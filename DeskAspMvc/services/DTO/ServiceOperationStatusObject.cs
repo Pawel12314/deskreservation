@@ -3,12 +3,12 @@ using DeskAspMvc.services.DTO.StatusTypes;
 
 namespace DeskAspMvc.services.DTO
 {
-    public class ServiceOperationStatusObject
+    public sealed class ServiceOperationStatusObject
     {
         public bool hasSucceeded { get; set; }
         public string message { get; set; }
         
-        public static ServiceOperationStatusObject getOperationStatusObject(IOperationMessage operation, IStatusTypeMessage error)
+        public static ServiceOperationStatusObject GetOperationStatusObject(IOperationMessage operation, IStatusTypeMessage error)
         {
             ServiceOperationStatusObject status = new ServiceOperationStatusObject();
             status.hasSucceeded = error.GetSuccessState();

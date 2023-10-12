@@ -1,6 +1,6 @@
 ﻿namespace DeskAspMvc.services.DTO.OperationTypes
 {
-    public class CreateOperationMessage : IOperationMessage
+    public sealed class CreateOperationMessage : IOperationMessage
     {
         public string GetMessage()
         {

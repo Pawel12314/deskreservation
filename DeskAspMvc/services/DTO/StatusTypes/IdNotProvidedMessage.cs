@@ -1,6 +1,6 @@
 ﻿namespace DeskAspMvc.services.DTO.StatusTypes
 {
-    public class IdNotProvidedMessage : IStatusTypeMessage
+    public sealed class IdNotProvidedMessage : IStatusTypeMessage
     {
         public string GetMessage()
         {

@@ -1,0 +1,60 @@
+﻿
+@{
+}
+@model IEnumerable<DeskAspMvc.Models.Models.Reservation>
+
+@if (ViewBag.Status != null)
+{
+    <text>
+        <div class="alert @(ViewBag.Status.hasSucceeded==false? "alert-danger" : "alert-success")" role="alert">
+            @ViewBag.Status.message
+        </div>
+    </text>
+}
+
+<table class="table">
+    <thead >
+        <tr class="bg-success text-white">
+            <td>
+                @Html.DisplayNameFor(model=>model.BeginDate)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model=>model.EndDate)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model=>model.Desk.Name)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model=>model.Desk.Location.Name)
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var res in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(model=>res.BeginDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(model=>res.EndDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(model=>res.Desk.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(model=>res.Desk.Location.Name)
+                </td>
+                <td>
+                    <a class="btn btn-success" asp-action="GetEditPage" asp-route-reservationid="@res.Id">Edit</a>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@res.Id">Delete</a>
+                </td>
+
+            </tr>
+        }
+
+    </tbody>
+</table>

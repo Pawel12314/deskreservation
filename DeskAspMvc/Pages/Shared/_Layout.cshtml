@@ -31,27 +31,27 @@
             </div>
         </nav>
     </header>
-    <div class="mydiv">
-
-        <ul >
-            <li class="nav-item">@Html.ActionLink("list of locations", "Index", "Location2", new { area = "Admin" }, null)</li>
-            <li class="nav-item">@Html.ActionLink("list of desks", "Index", "Desk2", new { area = "Admin" }, null)</li>
-            <li class="nav-item">@Html.ActionLink("gain admin privileges", "Gain", "AdminAccess", new { area = "Employee" }, null)</li>
-            <li class="nav-item">@Html.ActionLink("revoke admin privileges", "Revoke", "AdminAccess", new { area = "Employee" }, null)</li>
-            <li class="nav-item">@Html.ActionLink("test if you have admin privileges", "AdminTask", "AdminAccess", new { area = "Employee" }, null)</li>
-           @* <li class="nav-item">@Html.ActionLink("list of desks ", "Index", "Desk", new { area = "Admin" }, null)</li>
-            <li class="nav-item">@Html.ActionLink("to reservation ", "Index", "Reservation", new { area = "Employee" }, null)</li>
-            <li class="nav-item">@Html.ActionLink("to your reservations ", "YourReservations", "Reservation", new { area = "Employee" }, null)</li>
-*@        </ul>
+    <div class="row">    
+        <div class="col-2">
+            <ul>
+                <li class="nav-item">@Html.ActionLink("list of locations", "Index", "Location2", new { area = "Admin"}, new { @class="nav-link bg-light text-primary border border-primary rounded text-white-hover bg-primary-hover" })</li>
+                <li class="nav-item ">@Html.ActionLink("list of desks", "Index", "Desk2", new { area = "Admin"}, new { @class="nav-link bg-light text-primary border border-primary rounded" })</li>
+                <li class="nav-item">@Html.ActionLink("list of reservation for admin", "Index", "Reservation", new { area = "Admin"}, new { @class="nav-link bg-light text-primary border border-primary rounded" })</li>
+                <li class="nav-item">@Html.ActionLink("gain admin privileges", "Gain", "AdminAccess", new { area = "Employee"}, new { @class="nav-link bg-light text-danger border border-danger rounded" })</li>
+                <li class="nav-item">@Html.ActionLink("revoke admin privileges", "Revoke", "AdminAccess",new { area = "Employee"},  new { @class="nav-link bg-light text-danger border border-danger rounded" })</li>
+                <li class="nav-item">@Html.ActionLink("test if you have admin privileges", "AdminTask", "AdminAccess",new { area = "Employee"}, new { @class="nav-link bg-light text-success border border-success rounded" })</li>
+                <li class="nav-item">@Html.ActionLink("create book reservation", "Create", "Reservation2", new { area = "Employee"}, new { @class="nav-link bg-light text-success border border-success rounded" })</li>
+                <li class="nav-item">@Html.ActionLink("list of your reservations", "Index", "Reservation2", new { area = "Employee"}, new { @class="nav-link bg-light text-success border border-success rounded" })</li>
+            </ul>
+        </div>
+        <div class="col-10">
+            <div class="container">
+                <main role="main" class="pb-3">
+                    @RenderBody()
+                </main>
+            </div>
+        </div>
     </div>
-
-
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2023 - DeskAspMvc - <a asp-area="" asp-page="/Privacy">Privacy</a>

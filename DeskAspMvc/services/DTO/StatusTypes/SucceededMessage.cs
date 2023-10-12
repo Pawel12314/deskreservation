@@ -1,6 +1,6 @@
 ﻿namespace DeskAspMvc.services.DTO.StatusTypes
 {
-    public class SucceededMessage : IStatusTypeMessage
+    public sealed class SucceededMessage : IStatusTypeMessage
     {
         public string GetMessage()
         {

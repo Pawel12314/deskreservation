@@ -1,0 +1,235 @@
+﻿@{
+}
+@model DeskAspMvc.Models.dto.MyCalendarDTO
+@{
+    this.Layout = null;
+}
+
+
+
+<div class="row border border-success text-success">
+    <div class="col-6">
+        @Html.DisplayNameFor(model=>model.DeskName):
+        @Html.DisplayFor(model=>model.DeskName)
+    </div>
+    <div class="col-6">
+        @Html.DisplayNameFor(model=>model.DeskLocationName):
+        @Html.DisplayFor(model=>model.DeskLocationName)
+    </div>
+</div>
+<button class="btn btn-success my-3" id="setbeginbuttonid">set begin</button>
+<button class="btn btn-success my-3" id="setendbuttonid">set end</button>
+<br />
+<button class="btn btn-success my-3" id="reservebtnid" onClick="ReservePost()">
+    reserve
+</button>
+
+
+<div id="messagedivid">
+
+</div>
+<ul class="list-group list-group-horizontal calendartile">
+    @foreach(var _day in Model.MyDates)
+    {
+        
+        <li id="@(_day.Day+"x"+_day.Month+"x"+_day.Year)" 
+            class=  " 
+                    daydate 
+                    list-group-item 
+                    @(_day.Day + "x" + _day.Month + "x" + _day.Year)
+                    "
+            onClick="setDayReservation(this.id)">
+            <div 
+                class="card @(_day.IsReserved==true?"border border-5 border-warning":"")">
+                <div class="card-header ">
+                    @_day.Weekday
+                </div>
+                <div class="card-body ">
+                    @_day.Day @_day.Month
+                </div>
+                <div class="card-footer ">
+                    @_day.Year
+                </div>
+            </div>
+            @if(_day.Weekday==DayOfWeek.Sunday)
+            {
+                <br />
+            }
+        </li>
+        
+    }
+</ul>
+
+    <script type="text/javascript">
+
+        function PostAJAX(url, httptype, onsuccess, onfail) {
+            $.ajax({
+                url: url,
+                type: httptype,
+                dataType: "JSON",
+                success: function (data) { onsuccess(data) },
+                error: function (data) { onfail(data) },
+                contentType: "application/json; charset=utf-8"
+            })
+        }
+        function PostSuccess(data)
+        {
+            if (data.hasSucceeded==true)
+            {
+                $("#messagedivid").html(data.message);
+                $("#messagedivid").addClass("alert alert-success");
+                $("#messagedivid").removeClass("alert alert-warning");
+            }
+            else
+            {
+                $("#messagedivid").html(data.message);
+                $("#messagedivid").removeClass("alert alert-success");
+                $("#messagedivid").addClass("alert alert-warning");
+            }
+        }
+        function ReservePost()
+        {
+            var daylist = @Html.Raw(Json.Serialize(Model.MyDates));
+            var begindatestr = daystatus[setbegin].replaceAll("x","/");
+            var enddatestr = daystatus[setend].replaceAll("x","/");
+            var deskid = @Html.Raw(Json.Serialize(Model.DeskId));
+            PostAJAX("/Employee/Reservation2/PostReservation?begindate=" + begindatestr + "&&enddate=" + enddatestr + "&&deskid=" + deskid, "POST", PostSuccess, (data) => { console.log(data) });
+        }
+
+
+        var actionstatus = null
+        var daystatus = {}
+        var setbegin="setbegin";
+        var setend="setend";
+        var beforeloopstatus="beforeloop";
+        var currentloopstatus="currentloop";
+        var afterloopstatus="afterloop";
+        var failloopstatus="failloop"
+        var daylist = @Html.Raw(Json.Serialize(Model.MyDates));
+    
+    
+        $("#setbeginbuttonid").on("click", function () {
+            actionstatus = setbegin
+        });
+
+        
+        $("#setendbuttonid").on("click", function () {
+            actionstatus = setend
+        });
+    
+        function SetCard(id)
+        {
+            $("#" + id).addClass("bg-success")
+        }
+        function UnsetCard(id)
+        {
+            $("#" + id).removeClass("bg-success")
+        }
+        function SetStatusMessage()
+        {
+            $("#messagedivid").html("end of desk rental period should be after its begin")
+            $("#messagedivid").addClass("alert alert-warning")
+        }
+        function UnsetStatusMessage()
+        {
+            $("#messagedivid").html("")
+            $("#messagedivid").removeClass("alert alert-warning")
+        }
+        
+        function setDayReservation(data) {
+            daystatus[actionstatus]=data
+            if (Object.keys(daystatus).length==1)
+            {
+                daylist.forEach(_day=>{
+                    var dayid = _day.day + "x" + _day.month + "x" + _day.year
+                    if(dayid==data)
+                    {
+                        SetCard(dayid)
+                    }
+                    else
+                    {
+                        UnsetCard(dayid)
+                    }
+                })
+            }
+            else if(Object.keys(daystatus).length==2)
+            {
+                var loopstatus=beforeloopstatus;
+                daylist.forEach(_day=>{
+                var dayid = _day.day + "x" + _day.month + "x" + _day.year
+                var currentiterationstatus=beforeloopstatus;
+                if(loopstatus==beforeloopstatus)
+                {
+                    if(daystatus[setbegin]==daystatus[setend] && daystatus[setbegin]==dayid)
+                    {
+                        loopstatus=afterloopstatus;
+                        currentiterationstatus=currentloopstatus;
+                    }
+                    else if(daystatus[setbegin]==dayid)
+                    {
+                        loopstatus=currentloopstatus;
+                        currentiterationstatus=currentloopstatus;
+                    }
+                    else if(daystatus[setend]==dayid)
+                    {
+                        currentiterationstatus=failloopstatus;
+                        loopstatus=failloopstatus;
+                    }
+                    else{
+                        loopstatus=beforeloopstatus;
+                        currentiterationstatus=beforeloopstatus;
+                    }
+                }else if(loopstatus==currentloopstatus)
+                {
+                    if(daystatus[setend]==dayid)
+                    {
+                        currentiterationstatus=currentloopstatus;
+                        loopstatus=afterloopstatus;
+                    }
+                    else
+                    {
+                        currentiterationstatus=currentloopstatus;
+                        loopstatus=currentloopstatus;
+                    }
+                }else if(loopstatus==afterloopstatus)
+                {
+                    currentiterationstatus=afterloopstatus;
+                    loopstatus=afterloopstatus;
+                }else if(loopstatus==failloopstatus)
+                {
+                    currentiterationstatus=failloopstatus;
+                    loopstatus=failloopstatus;
+                }
+
+                if(currentiterationstatus==beforeloopstatus)
+                {
+                    UnsetCard(dayid);
+                    UnsetStatusMessage();
+                }
+                else if(currentiterationstatus==currentloopstatus)
+                {
+                    SetCard(dayid);
+                    UnsetStatusMessage();
+                }else if(currentiterationstatus==afterloopstatus)
+                {
+                    UnsetCard(dayid);
+                    UnsetStatusMessage();
+                }else if(currentiterationstatus==failloopstatus)
+                {
+                    daystatus={}
+                    daystatus[actionstatus] = data
+                    UnsetCard(dayid)
+                    SetStatusMessage();
+                    
+                }
+            })
+
+
+                
+            }
+        
+        }
+        
+    
+    </script>
+

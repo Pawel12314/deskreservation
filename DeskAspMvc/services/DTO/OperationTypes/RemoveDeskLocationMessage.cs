@@ -1,6 +1,6 @@
 ﻿namespace DeskAspMvc.services.DTO.OperationTypes
 {
-    public class RemoveDeskLocationMessage : IOperationMessage
+    public sealed class RemoveDeskLocationMessage : IOperationMessage
     {
         public string GetMessage()
         {

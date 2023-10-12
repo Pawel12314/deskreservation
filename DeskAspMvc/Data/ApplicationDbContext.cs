@@ -1,5 +1,4 @@
-﻿//using DeskAspMvc.Models;
-using DeskModel.Models;
+﻿using DeskAspMvc.Models.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -21,8 +20,7 @@ namespace DeskAspMvc.Data
                     entity =>
                     {
                         entity.ToTable("Location");
-                        entity.HasKey(x => x.id);
-                        // entity.HasMany(x => x.desks).WithOne(x => x.location).HasForeignKey(x=>x.locationKey);
+                        entity.HasKey(x => x.Id);
                     }
                 );
 
@@ -30,18 +28,12 @@ namespace DeskAspMvc.Data
                 entity =>
                 {
 
-                    entity.HasKey(x => x.id);
+                    entity.HasKey(x => x.Id);
                     entity.ToTable("Desk");
                     entity
-                    .HasOne(x => x.location)
-                    .WithMany(x => x.desks)
-                    .HasForeignKey(x => x.locationKey);
-                    /*entity
-                    .HasOne(x => x.reservation)
-                    .WithOne(x => x.desk)
-                    .HasForeignKey<Desk>(x => x.reservationId);
-                    *///.HasForeignKey<Reservation>(x => x.deskId);
-                    //.IsRequired(false);
+                    .HasOne(x => x.Location)
+                    .WithMany(x => x.Desks)
+                    .HasForeignKey(x => x.LocationKey);
                 }
             );
 
@@ -49,29 +41,25 @@ namespace DeskAspMvc.Data
                 entity =>
                 {
                     entity.ToTable("Reservation");
-                    entity.HasKey(x => x.id);
-                    entity.HasOne(x => x.desk)
-                    .WithMany(x => x.reservations)
-                    .HasForeignKey(x => x.deskId);
-                    entity.HasMany(x => x.dates)
-                    .WithMany(x => x.reservations);
-                    //entity.HasOne(x => x.owner).WithMany(x => x.reservations).HasForeignKey(x => x.ownerId);
-                    //entity.HasOne(x => x.location).WithMany(x => x.reservations).HasForeignKey(x => x.locationId);
+                    entity.HasKey(x => x.Id);
+                    entity.HasOne(x => x.Desk)
+                    .WithMany(x => x.Reservations)
+                    .HasForeignKey(x => x.DeskId);
+                    entity.HasMany(x => x.Dates)
+                    .WithMany(x => x.Reservations);
                 }
             );
             modelBuilder.Entity<MyDate>(
                 entity =>
                 {
                     entity.ToTable("MyDate");
-                    entity.HasKey(x => x.id);
+                    entity.HasKey(x => x.Id);
                 }
                 );
         }
-        //public DbSet<TestItem> TestITem { get; set; }
         public DbSet<Desk> desks { get; set; }
         public DbSet<Location> locations { get; set; }
         public DbSet<Reservation> reservations { get; set; }
-        //public DbSet<ReservationItem> reservationItems { get; set; }
         public DbSet<MyDate> mydates { get; set; }
     }
 }

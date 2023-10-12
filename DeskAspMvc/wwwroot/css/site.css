@@ -24,3 +24,10 @@ body {
 .mydiv{
     margin:25px;
 }
+
+.calendartile {
+    display: grid !important;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 1em;
+
+}

@@ -1,6 +1,6 @@
 ﻿namespace DeskAspMvc.services.DTO.StatusTypes
 {
-    public class NotFoundMessage : IStatusTypeMessage
+    public sealed class NotFoundMessage : IStatusTypeMessage
     {
         public string GetMessage()
         {

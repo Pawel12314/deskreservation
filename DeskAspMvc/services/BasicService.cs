@@ -2,7 +2,7 @@
 using DeskAspMvc.services.DTO.OperationTypes;
 using DeskAspMvc.services.DTO.StatusTypes;
 using DeskAspMvc.services.DTO;
-using DeskModel.Models;
+using DeskAspMvc.Models.Models;
 
 namespace DeskAspMvc.services
 {
@@ -18,10 +18,6 @@ namespace DeskAspMvc.services
         {
             return this._GetList();
         }
-        /*public List GetList()
-        {
-            return this._context.Set<T>().ToList();
-        }*/
         protected abstract void _Create(IModel entry);
         public ServiceOperationStatusObject Create(IModel entry)
         {
@@ -29,7 +25,7 @@ namespace DeskAspMvc.services
             _context.SaveChanges();
             ServiceOperationStatusObject status
                 = ServiceOperationStatusObject
-                .getOperationStatusObject(new CreateOperationMessage(), new SucceededMessage());
+                .GetOperationStatusObject(new CreateOperationMessage(), new SucceededMessage());
             return status;
         }
         protected abstract bool _DoesExist(int id);
@@ -39,7 +35,7 @@ namespace DeskAspMvc.services
             {
                 var res
                     = ServiceOperationStatusObject
-                    .getOperationStatusObject(new GetOperationMessage(), new IdNotProvidedMessage());
+                    .GetOperationStatusObject(new GetOperationMessage(), new IdNotProvidedMessage());
                 return res;
             }
             var doesExistStatus = _DoesExist(id ?? 0);
@@ -47,14 +43,14 @@ namespace DeskAspMvc.services
             {
                 var res
                     = ServiceOperationStatusObject
-                    .getOperationStatusObject(new GetOperationMessage(), new NotFoundMessage());
+                    .GetOperationStatusObject(new GetOperationMessage(), new NotFoundMessage());
                 return res;
             }
             else
             {
                 var res
                     = ServiceOperationStatusObject
-                    .getOperationStatusObject(new GetOperationMessage(), new SucceededMessage());
+                    .GetOperationStatusObject(new GetOperationMessage(), new SucceededMessage());
                 return res;
             }
         }
@@ -64,19 +60,18 @@ namespace DeskAspMvc.services
 
             if (_DoesExist(id))
             {
-                //_context.locations.Update(entry);
                 this._Edit(entry);
                 _context.SaveChanges();
                 ServiceOperationStatusObject ret
                     = ServiceOperationStatusObject
-                    .getOperationStatusObject(new EditOperationMessage(), new SucceededMessage());
+                    .GetOperationStatusObject(new EditOperationMessage(), new SucceededMessage());
                 return ret;
             }
             else
             {
                 ServiceOperationStatusObject ret
                     = ServiceOperationStatusObject
-                    .getOperationStatusObject(new EditOperationMessage(), new NotFoundMessage());
+                    .GetOperationStatusObject(new EditOperationMessage(), new NotFoundMessage());
                 return ret;
             }
         }
@@ -86,7 +81,6 @@ namespace DeskAspMvc.services
             if (id == null)
                 return null;
             return this._GetById(id);
-            //return this._context.locations.Find(id);
         }
         public  abstract ServiceOperationStatusObject _DeleteReqs(int? id);
         public abstract void _Delete(IModel entry);
@@ -96,7 +90,7 @@ namespace DeskAspMvc.services
             {
                 var res
                     = ServiceOperationStatusObject
-                    .getOperationStatusObject(new DeleteOperationMessage(), new IdNotProvidedMessage());
+                    .GetOperationStatusObject(new DeleteOperationMessage(), new IdNotProvidedMessage());
                 return res;
             }
             if (_DoesExist(id ?? 0))
@@ -116,7 +110,7 @@ namespace DeskAspMvc.services
             {
                 ServiceOperationStatusObject ret
                     = ServiceOperationStatusObject
-                    .getOperationStatusObject(new DeleteOperationMessage(), new NotFoundMessage());
+                    .GetOperationStatusObject(new DeleteOperationMessage(), new NotFoundMessage());
                 return ret;
             }
         }
