@@ -6,7 +6,7 @@
     this.Layout = null;
 }
 
-<div class="row border border-success text-success">
+<div class="row border border-primary text-primary">
     <div class="col-6">
         @Html.DisplayNameFor(model=>model.DeskName):
         @Html.DisplayFor(model=>model.DeskName)
@@ -16,7 +16,7 @@
         @Html.DisplayFor(model=>model.DeskLocationName)
     </div>
 </div>
-<div class="row border border-success text-success">
+<div class="row border border-primary text-primary">
     <div class="col-6">
         @Html.DisplayNameFor(model=>model.BeginDate):
         @Html.DisplayFor(model=>model.BeginDate)
@@ -28,8 +28,12 @@
 </div>
 
 
-<button id="setbeginbuttonid">set begin</button>
-<button id="setendbuttonid">set end</button>
+<button class="btn btn-primary" id="setbeginbuttonid">set begin</button>
+<button class="btn btn-primary" id="setendbuttonid">set end</button>
+<button class="btn btn-primary" id="reservebtnid" onClick="ReservePost()">
+    edit reservation
+</button>
+
 <div id="messagedivid">
 
 </div>
@@ -70,9 +74,7 @@
         
     }
 </ul>
-<button id="reservebtnid" onClick="ReservePost()">
-    reserve
-</button>
+
 
     <script type="text/javascript">
 

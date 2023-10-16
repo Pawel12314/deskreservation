@@ -38,7 +38,5 @@ I used this solution to secure application from intended and not intended mistak
 #5
 
 Aplikacja jest podzielona na część dla administratora i dla zwykłego użytkownika
-Kolor niebieski został wykorzystany w części dla administratora, a zielony w części dla zwykłego użytkownika
 
 Application is divided into part for administrators and for normal users.
-Blue color is used in administrator part and green in part for normal users

@@ -5,39 +5,39 @@
 <select  id="desksearchableid">
     <option value="" >please select desk for reservation purpose</option>
 </select>
-<div id="dateformid" class="row border border-success text-white">
+<div id="dateformid" class="row border border-primary text-primary">
     <div class="col-3">
-        <span class="text-success">
+        <span class="text-primary">
             day:
         </span>
-        <input class="border border-success text-success" id="dayinputid" type="number"/>
+        <input class="border border-primary text-primary" id="dayinputid" type="number"/>
     </div>
     <div class="col-3">
-        <span class="text-success">
+        <span class="text-primary">
             month:
         </span>
-        <input class="border border-success text-success" id="monthinputid" type="number" />
+        <input class="border border-primary text-primary" id="monthinputid" type="number" />
     </div>
     <div class="col-3">
-        <span class="text-success">
+        <span class="text-primary">
             year:
         </span>
-        <input class="border border-success text-success" id="yearinputid" type="number" />
+        <input class="border border-primary text-primary" id="yearinputid" type="number" />
     </div>
     <div class="col-3">
-        <span class="text-success">
+        <span class="text-primary">
             nr of weeks
         </span>
-        <input class="border border-success text-success" id="weeksinputid" type="number" />
+        <input class="border border-primary text-primary" id="weeksinputid" type="number" />
     </div>
 </div>
-<button class="btn btn-success rounded mx-3 my-3 text-white" id="movebackbuttonid" onclick="MoveBackwardFunction(this)">
+<button class="btn btn-primary rounded mx-3 my-3 text-white" id="movebackbuttonid" onclick="MoveBackwardFunction(this)">
     move back by a week
 </button>
-<button class="btn btn-success rounded mx-3 my-3 text-white" id="moveforwardbuttonid" onclick="MoveForwardFunction(this)">
+<button class="btn btn-primary rounded mx-3 my-3 text-white" id="moveforwardbuttonid" onclick="MoveForwardFunction(this)">
     move forward by a week
 </button>
-<button class="btn btn-success rounded mx-3 my-3 text-white" id="buttonForm">
+<button class="btn btn-primary rounded mx-3 my-3 text-white" id="buttonForm">
     load
 </button>
 
@@ -154,7 +154,7 @@
                         var statusmsg = null;
                         if(item.Available==false || item.Location.Id==-1)
                         {
-                            statusclass = "bg-white text-primary border rounded border-primary";
+                            statusclass = "bg-white text-secondary border rounded border-secondary";
                             statusmsg="this desk is unavailable";
                         }
                         else

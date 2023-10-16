@@ -14,7 +14,7 @@
 
 <table class="table">
     <thead >
-        <tr class="bg-success text-white">
+        <tr class="bg-primary text-white">
             <td>
                 @Html.DisplayNameFor(model=>model.BeginDate)
             </td>
@@ -49,7 +49,7 @@
                     @Html.DisplayFor(model=>res.Desk.Location.Name)
                 </td>
                 <td>
-                    <a class="btn btn-success" asp-action="GetEditPage" asp-route-reservationid="@res.Id">Edit</a>
+                    <a class="btn btn-primary" asp-action="GetEditPage" asp-route-reservationid="@res.Id">Edit</a>
                     <a class="btn btn-danger" asp-action="Delete" asp-route-id="@res.Id">Delete</a>
                 </td>
 
